@@ -1,0 +1,447 @@
+ *{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+    list-style-type: none;
+    /* background-color: black */
+    color: black
+} 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+/* FONTS IMPORTADAS 
+POPPINGs
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+ROBOTO slab
+
+
+.roboto-slab-<uniquifier> {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
+*/
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+/* 
+SECCION DE NOTAS. 
+
+
+Etiquetas que se deben colocar a los elementos padres para determinar el comportamiento de los hijos. 
+Para habilitar con flexbox. 
+
+display flex.
+
+Aliniar contenido: 
+justify-content alinea segun el eje principal
+align-items alinea segun el eje secundario 
+flex-direction determina la direccion en cual se van a colocar los flex-items. 
+
+Etiquetas que se deben colocar a los elementos hijos para terminar de ulitmar detalles como la alineacion del texto y otros detalles menores
+
+
+aling-content alinea segun el eje principal por defecto en row
+text-aling alinea seguin el eje secundario por defecto column 
+
+
+
+Alinear imagen con texto. en este caso quise alinear un icono con el texto para arreglar el tema de que se alineen todos los textos verticalmente
+
+vertical-aling:middle    Ejemplo en .menuFlecha
+
+
+
+
+
+TEMA DE POSITION. 
+
+Esta propiedad especifica como se va a posicionar un elemento con respecto al flujo del documento. Este tiene varios valores. 
+
+-Static: por defecto y no se mueve 
+
+-Relative: Sigue estando en su posicion normal donde esta pero podemos moverlo con left,top y demas. Cuando movemos con esta valor su espacio original queda como reservado por lo que nadie puede ocupar su lugar y esto no desconfigura el flow del docuemento. Mas que nada son ideales para colocarle en contenedores padres donde los hijos sean un submenu desplegable. Otro ejemplo es hacer una superposicion, ejemplo unas letras detras de una foto. Ejemplo en el selecctor .contenedorPerfil
+
+-Absolute: Este elemento sale del flow normal, osea que no reserva su lugar original. Se posiciona en relacion al primer contenedor que tenga position relative o cualquiera que no sea static
+
+-fixed. Este deja estatico pero en la pantalla digamos. Se queda ahi y no se mueve pero no interumpe el flow del documento.
+
+-sticky: Una combinacion entre relative y fixed. Se queda ahi hasta que se haga scroll y se queda fijo. 
+
+
+
+
+
+
+
+
+
+*/
+
+/* Seccion de nav */
+
+/* Nav Contenedor original */
+
+.barraNavegacion{
+    background-color: rgba(108, 200, 223, 0.116);
+    /* FIJARSE COMO HCAER UNA DEGRADACION */
+    height: 50px;
+    color: black
+}
+
+.menuContenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+}
+
+
+.menuLinks{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menuItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 24% ;
+    position: relative;
+}
+
+.menuItem:hover{
+    background-color:rgba(46, 87, 97, 0.116);
+}
+
+.menuFlecha{
+    vertical-align: middle;   /*Alinee el icono con el texto en la barra de navegacion*/
+}
+
+
+.menuAdentro{
+    display: none;
+    position:absolute;
+    top: 100%;
+    left: center;
+    background-color:rgba(108, 200, 223, 0.116) ;
+    width: 100%;
+    border-radius: 0 0 7px 7px ;    /*PARA AGREGAR UN SUAVIZACION AL CUADRADO*/
+
+}
+
+.itemAdentro{
+
+    margin-top: 10px;
+    text-align: center;
+}
+
+.itemAdentro:hover{
+    text-decoration:underline;
+}
+
+
+
+
+/* SECCION DEL MAIN */
+
+
+/* SECCION DE BIENVENIDA */
+
+.bienvenido{
+    width: 100%;
+    height: 500px;
+    background: 
+    /* Gradiente radial para la esquina inferior izquierda */
+    radial-gradient(at bottom left, rgba(184, 158, 235, 0.7), transparent 70%),
+    /* Gradiente radial para la esquina inferior derecha */
+    radial-gradient(at bottom right, rgba(233, 174, 65, 0.822), transparent 70%),
+    /* Gradiente lineal para suavizar los colores en el centro */
+    linear-gradient(to right, rgba(237, 226, 243, 0.3), rgba(236, 233, 226, 0.3));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.titulo{
+    text-align:center;
+}
+
+.tituloh1{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+    font-style:normal;
+    font-size: 50px;
+
+}
+
+.arriba{
+    margin-bottom: 100px;
+}
+
+.segundaDivicion{
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2rem;
+}
+.cuadro{
+    position: absolute;
+    z-index: 1; /* Coloca el cuadro detrás de la imagen */
+    width: 400px; /* Ajusta el tamaño del cuadro */
+    height: 200px;
+    background-color: rgba(255, 171, 45, 0.938); /* Un color de fondo con opacidad */
+    top: 50%; /* Ajusta la posición del cuadro */
+    left: 40%;
+    transform: translate(-50%, 20%); /* Para posicionarlo ligeramente detrás y abajo de la imagen */
+    border-radius: 55px 0 55px 15px;
+}
+.farligth{
+    position: relative;
+    z-index: 2; /* Asegura que la imagen esté por encima del cuadro */
+    max-width: 100%; /* Ajusta el tamaño de la imagen */
+}
+
+
+
+/*                                          SECCION SOBRE MI */
+
+/* FOTO CON MI NOMBRE */
+
+
+.QuienSoy{
+    width: 100%;
+    height: 30em;
+    /* background-color: aqua; */
+    padding-bottom: 1px;
+}
+/* CONTENEDOR DE TODO */
+.conedorPerfil{
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* TRATAMIENTO A LA FOTO  */
+.fotoPerfil{
+    height: 25em;
+    width: auto;
+    border-radius: 50%;
+    position: absolute;
+    /* EL top, left, y transform esta para centrar la imagen al centro de la pantalla. */
+    top: 50% ;
+    left: 50%;
+    transform: translate(-50%,-50%) ;
+    z-index: 1;
+}
+
+/* creacion del circulo de atras para dar efecto de neon */
+
+.efectoNeon{
+    width: 25.4em;
+    height: 25.4em;
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image:linear-gradient(45deg, rgba(240,54,24,1) 0%, rgba(226,147,38,1) 10%, rgba(247,255,0,1) 20%, rgba(128,255,17,1) 30%, rgba(34,255,165,1) 40%, rgba(26,231,241,1) 50%, rgba(41,115,235,1) 60%, rgba(62,53,221,1) 70%, rgba(147,36,246,1) 80%, rgba(245,28,136,1) 90%, rgba(255,111,111,1) 100%);
+    background-size: 400%;
+    animation: animate 20s linear infinite;
+    filter: blur(20px);
+}
+@keyframes animate {
+
+    /* ANIMACION DE EFECTO */
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 400% 0 ;
+    }
+    100%{
+        background-position: 0 0;
+    }
+}
+
+/* TRATAMIENTO AL TEXTO DE ALEX SCOTARO  */
+
+.textoPerfil{
+    padding: 0 auto;
+    font-size: 7em;
+    z-index: 2;
+    letter-spacing:0.2em;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(29, 29, 26, 0.733)
+}
+
+/* SECCION DE HISTORIA */
+
+
+.historia{
+    height: 20em;
+    width: 100%;
+    background-color: #1b1b32;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.textoHistoria{
+    width: 33%;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    color: white;
+}
+
+
+
+
+/* SECCION DE GUSTOS */
+
+
+/* contenedor slider */
+.SecciondeGustos{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+.h2Gustos{
+    font-size: 3em;
+    margin-bottom: 1em;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.pGustos{
+    font-size: 1em;
+}
+
+
+
+
+
+.GustosPadre{
+    display: flex;
+    width: 100%;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gustosContenedor{
+    width: 900px;
+    height: 500px;
+    display: flex;
+}
+/* Este es el que define el espacio y el que luego con el hover cambia de tamaño */
+.textoEImagen{
+    position: relative;
+    width: 0;
+    flex-grow: 1;
+    object-fit: cover;
+    transition: .5s ease;
+    opacity: .8;
+}
+
+.textoEImagen img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+.textoEImagen:hover{
+    width: 50%;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+/* Este es el contenedor que se superpone y da color cuando tiene el hover. Este es el h2 y el p */
+.fondoGustos{
+    top: 0.00001%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(59, 57, 57, 0.459);
+}
+
+
+.fondoGustos:hover{
+    opacity: 100%;
+}
+.subtituloGusto{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: white;
+}
+
+.textoGustos{
+    width: 90%;
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
