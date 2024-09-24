@@ -21,3 +21,11 @@ barraNavegacion.forEach(function(item) {
         });    
     });
 });
+
+
+
+// Seccion de juegos. 
+
+
+
+

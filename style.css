@@ -47,6 +47,8 @@ body{
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
 }
 /* 
 SECCION DE NOTAS. 
@@ -94,7 +96,24 @@ Esta propiedad especifica como se va a posicionar un elemento con respecto al fl
 
 
 
+TEMA DE CSS GRID. 
 
+Este te sirve para moderlar otras cosas mas complicadas que flexbox no puede como por ejemplo hacer un mosico y que ocupen diferentes lugares. 
+
+Propiedades:
+
+display: grid; esto te permite manejar el contenedor con grid. Para que surgan efectos deseados, se debe tratar como flexbox. Es decir que tenemos que poner cuantas filas/columnas queremos en el contenedor padre y definir sus tamaños alli. 
+
+
+COSAS QUE DEBEN IR EN EL CONTENEDOR PADRE
+
+grid-template-column/rows: repeat(3,1fr); define la cantidad de filas o columnas que van a ocupar. 
+
+grid-auto-column/rows: define el tamaño de fila/columna.
+
+COSAS QUE VAN EN EL HIJO.
+
+grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el elemento.  
 
 
 
@@ -435,6 +454,220 @@ Esta propiedad especifica como se va a posicionar un elemento con respecto al fl
     left: 5%;
     color: white;
 }
+
+
+
+/* SECCION DE PROYECTOS */
+
+/* h2 y p section */
+
+.SecciondeProyectos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5em ;
+    width: 90%;
+    text-align: center;
+    
+}
+/* Contenedor de las targetas(Padre original) */
+
+/* contenedor padre original */
+.contenedorFlex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40em;
+}
+
+
+/* contenedor donde hice los cuadros */
+.contenedorGrid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 200px;
+    display: grid;
+    grid-gap: 10px;
+    width: 90%;
+    /* grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: 220px;
+    grid-gap: 10px;
+    width: 90%; */
+}
+
+/* Contenedores grid por separado */
+.proyectoscontenedores{
+    background-color: rgb(36, 33, 33);
+}
+
+/* Contenedores grid en donde ocupan el doble de su espacio */
+.proyectoscontenedores:nth-child(3){
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+
+.proyectoscontenedores:nth-child(4){
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+
+/* Tratamiento del div que contiene la imagen de fondo mas el div que contiene los iconos y el h2 */
+.imagenYTextoProyecto{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* fondo de la foto  */
+.miniatura{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* div con los iconos mas el h2  */
+.fondoProyectos{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(36, 35, 34, 0.356);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    flex-direction: column;
+    transition: .5s ease;
+}
+
+.fondoProyectos:hover{
+    opacity: 1;
+}
+
+/* Tratamiento de imagenes que no tienen proyecto */
+
+.comingSoon{
+    opacity: .5;
+}
+
+
+/* Tratamiento de h2 */
+.h2Proyecto{
+    color:white;
+    font-family: monospace;
+    font-size: 2.5em;
+}
+
+/* Tratamiento de los iconos */
+
+.linkProyecto img{
+    width: 2em;
+    height: 2em;
+    margin: 10px;
+}
+
+
+
+
+/* Seccion de juegos  */
+
+
+/* Seccion de piedra, papel o tijeras. (PPT) */
+
+.seccionDeJuegos{
+    width: 100%;
+    height: 30em;
+    background-color: rgba(255, 0, 0, 0.185);
+    display: flex;
+    border-radius: 10px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.recuadroPPT{
+    width: 50%;
+    height: 100%;
+    background-color: burlywood;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column ;
+}
+.ocultar{
+    display: none;
+}
+
+.ImagenFondo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.PPTBienvenida{
+    width: 100%;
+    height: 10%;
+    background-color: rgb(38, 94, 146);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Tratamiento de las imagenes.  */
+
+.seleccionJuego{
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+
+.recuadroAdivinaNum{
+    width: 50%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
+}
+
+/* FLECHA DE RESET */
+.botonReset{
+    top: 5%;
+    left: 2%;
+    position:absolute;
+    vertical-align: middle;
+    background-color: aliceblue;
+}
+
+.botonFlex{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
