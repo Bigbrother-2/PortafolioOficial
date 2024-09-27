@@ -9,6 +9,7 @@
 } 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 /* FONTS IMPORTADAS 
 POPPINGs
 
@@ -37,6 +38,13 @@ ROBOTO slab
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
+  font-style: normal;
+}
+
+Lobster
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -126,10 +134,14 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 /* Nav Contenedor original */
 
 .barraNavegacion{
-    background-color: rgba(108, 200, 223, 0.116);
+    background-color: rgb(255, 255, 255);
     /* FIJARSE COMO HCAER UNA DEGRADACION */
     height: 50px;
-    color: black
+    color: black;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    z-index: 100;
 }
 
 .menuContenedor{
@@ -139,6 +151,13 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     width: 100%;
     height: 100%;
     max-width: 1200px;
+}
+
+.log{
+    height: 40px;
+    object-fit: contain;
+    width: 40px;
+    margin-left: 2em;
 }
 
 
@@ -241,8 +260,8 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 .cuadro{
     position: absolute;
     z-index: 1; /* Coloca el cuadro detrás de la imagen */
-    width: 400px; /* Ajusta el tamaño del cuadro */
-    height: 200px;
+    width: 350px; /* Ajusta el tamaño del cuadro */
+    height: 150px;
     background-color: rgba(255, 171, 45, 0.938); /* Un color de fondo con opacidad */
     top: 50%; /* Ajusta la posición del cuadro */
     left: 40%;
@@ -620,6 +639,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     flex-direction: column ;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2.5em;
 }
 
 .contacto{
@@ -640,6 +660,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     justify-content: center;
     align-items: center;
     height: 90%;
+
 }
 
 .contactoFormal{
@@ -669,6 +690,9 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     align-content: center;
 }
 
+.contactoFormal p {
+    text-align: center;
+}
 
 
 /* FOOTER */
@@ -676,27 +700,95 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 
 .contenedorFooter{
     width: 100%;
-    height: 25em;
-    background-color: rgb(54, 30, 189);
+    height: 13em;
+    background-color: rgb(70, 70, 70);
     display: flex;
 }
 
 .contenedorLogo{
     width: 33%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center; 
+
+}
+
+.logoFooter{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
 }
 
 .contenedorRedes{
 width: 33%;
 height: 100%;
+display: flex;
+justify-content:space-around;
+align-items:center;
+
 }
 
-.contenedorTelefono{
+.iconoRedSocial{
+    width: 3em;
+    height: 3em;
+    background-color: rgb(41, 41, 41);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+}
+
+.iconoRedSocial:hover{
+    background-color: rgb(197, 197, 197);
+}
+
+.contenedorIconoA
+
+.iconoIndividual{
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+}
+
+.iconoIndividual:hover{
+    color: rgb(37, 37, 37);
+}
+
+/* tratamiento al Texto.  */
+.contenedorPresentacion{
     width: 33%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
 }
+
+.h2Presentacion{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+}
+
+.pPresentacion{
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: aliceblue;
+}
+
+.pPresentacion a{
+    color: aliceblue;
+}
+
+
+/* Tratamiento de los iconos de las redes sociales */
+
+
+
+
 
 
 
