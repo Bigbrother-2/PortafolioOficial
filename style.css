@@ -5,7 +5,10 @@
     box-sizing: border-box;
     list-style-type: none;
     /* background-color: black */
-    color: black
+    color: black;
+
+    /* Ancho maximo de la pagina Entera */
+    max-width: 1440px
 } 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
@@ -135,7 +138,6 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 
 .barraNavegacion{
     background-color: rgb(255, 255, 255);
-    /* FIJARSE COMO HCAER UNA DEGRADACION */
     height: 50px;
     color: black;
     position: fixed;
@@ -148,9 +150,10 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 1000px;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1000px;
+    
 }
 
 .log{
@@ -162,10 +165,10 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 
 
 .menuLinks{
-    width: 50%;
+    width: 60%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-items: end;
     align-items: center;
 }
 
@@ -176,6 +179,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     height: 100%;
     width: 24% ;
     position: relative;
+
 }
 
 .menuItem:hover{
@@ -366,7 +370,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 }
 
 .textoHistoria{
-    width: 33%;
+    width: 50%;
     height: 100%;
     text-align: center;
     align-content: center;
@@ -486,7 +490,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     align-items: center;
     flex-direction: column;
     margin-bottom: 5em ;
-    width: 90%;
+    width: 100%;
     text-align: center;
     
 }
@@ -784,7 +788,64 @@ align-items:center;
 }
 
 
-/* Tratamiento de los iconos de las redes sociales */
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .menuLinks{
+        width: 60%;
+    }
+    .cuadro {
+        height: 100px;
+        width: 200px;
+    }
+
+    .tituloh1{
+        font-size: 25px;
+    }
+
+    .farligth{
+        height: 200px;
+        width: auto;
+        object-fit: contain;
+    }
+
+    .textoPerfil{
+        font-size:4em ;
+    }
+
+    .historia{
+        font-size: .9em;
+    }
+
+    .h2Gustos{
+        font-size: 2em;
+    }
+    
+    .pGustos{
+        font-size: .8em;
+    }
+
+    .gustosContenedor{
+        height: 450px;
+        width: 90%;
+    }
+
+    .h2Gustos{
+        font-size: 2em;
+    }
+    .pGustos{
+        font-size: .7em;
+    }
+
+    .contenedorGrid{
+        background-color: red;
+        width: 600px;
+    }
+    .proyectoscontenedores{
+        height: 80%;
+    }
+    
+}
 
 
 
