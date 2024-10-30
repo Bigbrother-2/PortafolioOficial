@@ -4,11 +4,10 @@
     text-decoration: none;
     box-sizing: border-box;
     list-style-type: none;
-    /* background-color: black */
+    /* background-color: black; */
     color: black;
 
     /* Ancho maximo de la pagina Entera */
-    max-width: 1440px
 } 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
@@ -60,6 +59,10 @@ body{
     font-style: normal;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 /* 
 SECCION DE NOTAS. 
@@ -136,40 +139,55 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 
 /* Nav Contenedor original */
 
+
+
 .barraNavegacion{
     background-color: rgb(255, 255, 255);
-    height: 50px;
+    height: auto; /*Antes estaba en 50px*/
     color: black;
     position: fixed;
     display: flex;
     width: 100%;
+    max-width: 100vw;
     z-index: 100;
+    width: 100vw; /*Asegura que el header no sobrepase el viewport*/
 }
 
 .menuContenedor{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 1000px;
-    height: 100%;
+    width: 100%;
+    height: auto; /*antes estaba en 100%*/
+    margin: 0 auto; /* Centra el contenido del header */
+    padding: 0 1em; /* Asegura que el padding no cause desbordamiento */
     max-width: 1000px;
-    
+}
+
+
+.menuContenedor, .menuLinks {
+    width: 100%;
+    max-width: 100vw;
 }
 
 .log{
     height: 40px;
     object-fit: contain;
     width: 40px;
-    margin-left: 2em;
+    margin-left: 0.5em;   
 }
-
+.menuDesplegable{
+    display: none;
+}
 
 .menuLinks{
     width: 60%;
-    height: 100%;
+    height: auto;
     display: flex;
     justify-items: end;
     align-items: center;
+    margin: 0;
+    padding: 0
 }
 
 .menuItem{
@@ -179,7 +197,6 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     height: 100%;
     width: 24% ;
     position: relative;
-
 }
 
 .menuItem:hover{
@@ -272,6 +289,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
     transform: translate(-50%, 20%); /* Para posicionarlo ligeramente detrás y abajo de la imagen */
     border-radius: 55px 0 55px 15px;
 }
+
 .farligth{
     position: relative;
     z-index: 2; /* Asegura que la imagen esté por encima del cuadro */
@@ -293,6 +311,7 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 }
 /* CONTENEDOR DE TODO */
 .conedorPerfil{
+    width: 100%;
     height: 30em;
     display: flex;
     justify-content: center;
@@ -347,14 +366,14 @@ grid-column/rows-start: span 3; Indica en que linea de columna/fila empezara el 
 
 .textoPerfil{
     padding: 0 auto;
-    font-size: 7em;
+    /* font-size: 7em; */
     z-index: 2;
     letter-spacing:0.2em;
     font-family: "Roboto Slab", serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
-    color: rgba(29, 29, 26, 0.733)
+    color: white
 }
 
 /* SECCION DE HISTORIA */
@@ -748,7 +767,7 @@ align-items:center;
     background-color: rgb(197, 197, 197);
 }
 
-.contenedorIconoA
+
 
 .iconoIndividual{
     color: rgb(255, 255, 255);
@@ -790,64 +809,460 @@ align-items:center;
 
 /* Responsive */
 
-@media (max-width: 1024px) {
-    .menuLinks{
-        width: 60%;
-    }
-    .cuadro {
-        height: 100px;
-        width: 200px;
+@media only screen and (max-width:320px){/*Pantallas hasta 320px*/
+    .barraNavegacion{
+        width: 100%;
     }
 
+    .menuContenedor{
+        position: relative;
+    }
+    .menuDesplegable{
+        display: flex;
+        font-size: 25px;
+    }
+    .barraNavegacion .menuContenedor .menuLinks{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items:end;
+        justify-content: start;
+        top: 45px;
+        left: 40%;
+        display: none;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem{
+        margin: 10px;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem .itemAdentro , .menuFlecha{
+        display: none;
+    }
+
+    /*Seccion de bienvenida.*/
+
+    .bienvenido{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    
     .tituloh1{
         font-size: 25px;
     }
 
-    .farligth{
-        height: 200px;
-        width: auto;
-        object-fit: contain;
+    .segundaDivicion{
+        display: none;
     }
+
+    /* Seccion de mi foto con el efecto neon */
+    .fotoPerfil{
+        height: 17em;
+        width: auto;
+    }
+
+    .efectoNeon{
+        width: 17.4em;
+        height: 17.4em;
+    }
+
+
+    /* Seccion sobre mi */
 
     .textoPerfil{
-        font-size:4em ;
+        font-size: 25px;
     }
 
-    .historia{
-        font-size: .9em;
+    /* Seccion donde esta la historia */
+
+    .historia .textoHistoria{
+        font-size: 10px;
+        line-height: 15px
     }
 
-    .h2Gustos{
-        font-size: 2em;
-    }
-    
-    .pGustos{
-        font-size: .8em;
+    /* Contenedor de las targetas */
+
+    .SecciondeProyectos{
+        margin-bottom: 1em;
     }
 
-    .gustosContenedor{
-        height: 450px;
-        width: 90%;
-    }
-
-    .h2Gustos{
-        font-size: 2em;
-    }
-    .pGustos{
-        font-size: .7em;
+    .contenedorFlex{
+        height: 25em;
     }
 
     .contenedorGrid{
-        background-color: red;
-        width: 600px;
+        grid-gap:2px;
+        grid-auto-rows: 100px;
     }
-    .proyectoscontenedores{
-        height: 80%;
+
+    .fondoProyectos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .linkProyecto{
+        font-size: 4px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .h2Proyecto{
+        font-size: 10px;
+    }
+
+    /* seccion de contacto */
+
+    .contenedorContacto{
+        height: 26em;
+    }
+
+    .contacto{
+        font-size: 10px;
+        padding-top: 0.5em;
+    }
+
+    .contactoFlex{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .contactoFormal{
+        font-size: 10px;
+        margin: 0.7em;
+    }
+
+    /* Seccion de footer */
+
+    .contenedorFooter{
+        flex-direction: column;
+        height: 20em;
+    }
+    .contenedorLogo{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logoFooter{
+        width:40% ;
+        height: 40%;
+    }
+    .contenedorRedes{
+        width: 100%;
+        justify-content: center
+    }
+    .iconoRedSocial{
+        width: 2.5em;
+        height: 2.5em;
+    }
+    .iconoIndividual{
+        font-size: 1.5em;
+    }
+
+    .contenedorPresentacion{
+        width: 100%;
+        align-items:center;
+    }
+
+    .pPresentacion{
+        margin-top: 10px;
+    }
+}
+@media only screen and (min-width: 321px) and (max-width: 425px){ /*Pantallas hasta 425px*/
+    .barraNavegacion{
+        width: 100%;
+    }
+
+    .menuContenedor{
+        position: relative;
+    }
+    .menuDesplegable{
+        display: block;
+        font-size: 25px;
+    }
+    .barraNavegacion .menuContenedor .menuLinks{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items:end;
+        justify-content: start;
+        top: 45px;
+        left: 40%;
+        display: none;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem{
+        margin: 10px;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem .itemAdentro , .menuFlecha{
+        display: none;
+    }
+
+
+    /* seccion de bienvenida */
+
+    .seccionMain{
+        width: 100%;
+    }
+
+    .bienvenido{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .segundaDivicion{
+        display: none;
     }
     
+    /* Seccion sobre mi */
+
+
+
+    .fotoPerfil{
+        height: 18em;
+        width: auto;
+    }
+
+    .efectoNeon{
+        width: 18.4em;
+        height: 18.4em;
+    }
+
+
+    /* Seccion donde esta la historia */
+
+    .historia .textoHistoria{
+        font-size: 13px;
+    }
+
+    .SecciondeProyectos{
+        margin-bottom: 1em;
+    }
+
+    .contenedorFlex{
+        height: 27em;
+    }
+
+    .contenedorGrid{
+        grid-gap:5px;
+        grid-auto-rows: 130px;
+    }
+
+    .fondoProyectos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .linkProyecto{
+        font-size: 10px;
+    }
+
+    .h2Proyecto{
+        font-size: 13px;
+    }
+     /* seccion de contacto */
+
+    .contenedorContacto{
+        height: 26em;
+    }
+
+    .contacto{
+        font-size: 10px;
+        padding-top: 0.5em;
+    }
+
+    .contactoFlex{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .contactoFormal{
+        font-size: 10px;
+        margin: 0.7em;
+    }
+
+    /* Seccion de footer */
+
+    .contenedorFooter{
+        flex-direction: column;
+        height: 20em;
+    }
+    .contenedorLogo{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logoFooter{
+        width:40% ;
+        height: 40%;
+    }
+    .contenedorRedes{
+        width: 100%;
+        justify-content: center
+    }
+    .iconoRedSocial{
+        width: 2.5em;
+        height: 2.5em;
+    }
+    .iconoIndividual{
+        font-size: 1.5em;
+    }
+
+    .contenedorPresentacion{
+        width: 100%;
+        align-items:center;
+    }
+
+    .pPresentacion{
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 426px) and (max-width:768px){
+    .barraNavegacion{
+        width: 100%;
+    }
+
+    .menuContenedor{
+        position: relative;
+    }
+    .menuDesplegable{
+        display: block;
+        font-size: 25px;
+    }
+    .barraNavegacion .menuContenedor .menuLinks{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items:end;
+        justify-content: start;
+        top: 45px;
+        left: 40%;
+        display: none;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem{
+        margin: 10px;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem .itemAdentro , .menuFlecha{
+        display: none;
+    }
+
+    /* seccion de bienvenida */
+
+    .seccionMain{
+        width: 100%;
+    }
+
+    .bienvenido{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titulo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .segundaDivicion{
+        display: none;
+    }
+
+    /* Seccion donde esta la historia */
+
+    .historia .textoHistoria{
+        font-size: 15px;
+    }
+
+
+    /* Secciones de proyectos */
+    .SecciondeProyectos{
+        margin-bottom: 2em;
+    }
+
+    .fondoProyectos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* background-color: red; */
+    }
+
+    .linkProyecto{
+        font-size: 15px;
+    }
+
+    .h2Proyecto{
+        font-size: 19px;
+    }
+
+     /* seccion de contacto */
+
+     .contenedorContacto{
+        height: 26em;
+    }
+
+    .contacto{
+        font-size: 10px;
+        padding-top: 0.5em;
+    }
+
+    .contactoFlex{
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .contactoFormal{
+        font-size: 10px;
+        margin: 0.7em;
+    }
 }
 
 
+@media only screen and (min-width:768px) and (min-width:1024px){ /*Pantallas hasta 1024px*/
+    
+    .barraNavegacion .menuContenedor .menuLinks .menuItem .itemAdentro , .menuFlecha{
+        display: none;
+    }
+
+    /* Seccion de bienvenida */
+
+    .titulo{
+        width: 60%;
+    }
+
+    .farligth{
+        height: auto;
+        width: 450px;
+    }
+
+    .cuadro{
+        height: 100px;
+        width: 250px;
+    }
+}
 
 
 

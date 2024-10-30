@@ -24,42 +24,21 @@ barraNavegacion.forEach(function(item) {
 
 
 
-// Seccion de juegos. 
 
 
-const botonPiedra  = document.getElementById("botonPiedra")
-const botonPapel = document.getElementById("botonPapel")
-const botonTijeras = document.getElementById("botonTijeras")
-
-const piedra = "piedra"
-const papel = "papel"
-const tijeras = "tijeras"
-
-botonPiedra.addEventListener("click", function(){
-    play(piedra)
-});
-
-botonPapel.addEventListener("click", function(){
-    play(papel)
-});
-
-botonTijeras.addEventListener("click",function(){
-    play(tijeras)
-});
+// Seccion de menu desplegable
 
 
-function play(eleccionUsuario){
-    
+const botonDesplegable = document.getElementById("botonDesplegable")
+const menuLinks = document.getElementById("menuLinks")
+menuLinks.style.display = "none"
 
+botonDesplegable.addEventListener("click", menuDesplegable)
 
-}
-
-
-function eleccionMaquina (){
-    const numeroRandom = Math.floor(Math.random()*3)
-    switch(numeroRandom){
-        case 0: return "Piedra"
-        case 1: return "Papel" 
-        case 2: return "Tijera"
+function menuDesplegable (){
+    if(menuLinks.style.display === "none"){
+        menuLinks.style.display = "flex"
+    } else if (menuLinks.style.display ==="flex"){
+        menuLinks.style.display = "none"
     }
 }

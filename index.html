@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Personal</title>
     <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
@@ -14,13 +15,16 @@
                 <!-- LOGO -->
                 <a href="#"><img src="./assets/MiLogo.png" alt="" srcset="" class="log"></a>
                 <!-- INICIO -->
-                <ul class="menuLinks">
+                <div class="menuDesplegable" id="botonDesplegable">
+                    <i class='bx bx-menu'></i>
+                </div>
+                <ul class="menuLinks" id="menuLinks">
                     <li class="menuItem"> <!-- A este ahora lo trato como padre-->
                         <a href="#" class="linksMenu">Inicio</a> <!-- A este ahora lo trato como hijo-->
                     </li>
                     <!-- SECCION DE CONOCEME -->
-                    <li class="menuItem menuIcono">
-                        <a href="#CONOCEME" class="linksMenu">Conóceme <img src="./assets/arrow.svg" class="menuFlecha"></a>
+                    <li class="menuItem menuIcono" id="menuItem">
+                        <a href="#CONOCEME" class="linksMenu">Conóceme<img src="./assets/arrow.svg" class="menuFlecha"></a>
                         <ul class="menuAdentro">
                             <li class="itemAdentro">
                                 <a href="#textoConoceme" class="linksMenu menuAdentroLink">Quien Soy</a>
@@ -36,9 +40,6 @@
                         <a href="#proyectos" class="linksMenu">Proyectos</a>
                     </li>
                     <!-- SECCION DE CONTACTOS -->
-                    <li class="menuItem"> <!-- A este ahora lo trato como hijo4-->
-                        <a href="#" class="linksMenu">Juegos </a>
-                    </li>
                     <li class="menuItem"> <!-- A este ahora lo trato como hijo4-->
                         <a href="#contacto" class="linksMenu">Contacto <img src="./assets/arrow.svg" class="menuFlecha"></a>
                         <ul class="menuAdentro">
@@ -57,16 +58,18 @@
             </section>
         </nav>
     </header>
+        </nav>
+    </header>
     <!-- SECCION DE PARTE DE LA PAGINA QUE SE VE APENAS SE ENTRA -->
-    <main>
-        <section class="bienvenido">
+    <main class="seccionMain">
+        <section class="bienvenido" >
             <div class="titulo">
                 <h1 class="tituloh1 arriba">FLITZ</h1>
                 <h1 class="tituloh1">FRONT END DESIGNER</h1>
             </div>
             <div class="segundaDivicion">
-            <img src="./assets/FotoDefinitiva.png" alt="ImagenFondo" class="farligth">
-            <div class="cuadro"></div>
+                <img src="./assets/FotoDefinitiva.png" alt="ImagenFondo" class="farligth">
+                <div class="cuadro"></div>
             </div>
         </section>
     </main>
@@ -75,10 +78,10 @@
     <!-- SECCION DE SOBRE MI -->
 
             <!-- QUIEN SOY -->
-    <div class="conedorPerfil">
+    <div class="conedorPerfil" id="CONOCEME">
         <h1 class="textoPerfil">ALEX SCOTARO</h1>
-            <div class="efectoNeon"></div>
-            <img src="./assets/FOTO VIRGEN.jpg" alt="FotoPerfil" class="fotoPerfil">
+        <div class="efectoNeon"></div>
+        <img src="./assets/FOTO VIRGEN.jpg" alt="FotoPerfil" class="fotoPerfil">
     </div>
             <!-- SECCION DONDE ESTA MI HISTORY -->
     <div class="historia" id="textoConoceme">  <!--CONTENEDOR PADRE-->
@@ -117,7 +120,7 @@
                 <img src="./assets/KameHouse.jpeg" alt="">
                 <div class="fondoGustos ">
                     <h2 class="subtituloGusto">ANIME</h2>
-                    <p class="textoGustos">Anime: Descubrí el anime hace unos 2 o 3 años y me he vuelto un gran fan. Disfruto viendo series como Horimiya, Skip to Loafer, MASHLE, Spy x Family, y otras emocionantes como Demon Slayer, Dragon Ball, Nanatsu no Taizai y Jujutsu Kaisen.</p>
+                    <p class="textoGustos">Descubrí el anime hace unos 2 o 3 años y me he vuelto un gran fan. Disfruto viendo series como Horimiya, Skip to Loafer, MASHLE, Spy x Family, y otras emocionantes como Demon Slayer, Dragon Ball, Nanatsu no Taizai y Jujutsu Kaisen.</p>
                 </div>
             </div>
             <div class="textoEImagen">
@@ -130,8 +133,8 @@
             <div class="textoEImagen">
                 <img src="./assets/xgames.jpg" alt="">
                 <div class="fondoGustos gustosClaro gustosOscuro    ">
-                    <h2 class="subtituloGusto">ANIME</h2>
-                    <p class="textoGustos">Deporte: Practico varios deportes para mantenerme activo y despejar la mente. Me gusta jugar al fútbol, pádel, andar en bicicleta, correr y caminar. Ademas, tambien disfruto mucho de ver deportes que por desgracia no puedo practicar habitualmente como snowboarding, Descenso BTT,automovilismo como la F1 o rallys de diferentes categorias.</p>
+                    <h2 class="subtituloGusto">Deportes</h2>
+                    <p class="textoGustos">Practico varios deportes para mantenerme activo y despejar la mente. Me gusta jugar al fútbol, pádel, andar en bicicleta, correr y caminar. Ademas, tambien disfruto mucho de ver deportes que por desgracia no puedo practicar habitualmente como snowboarding, Descenso BTT,automovilismo como la F1 o rallys de diferentes categorias.</p>
                 </div>
             </div>
         </section>
@@ -141,7 +144,7 @@
     <!-- SECCION DE PROYECTOS -->
     <section class="SecciondeProyectos" id="proyectos">   
         <h2 class="h2Gustos">Proyectos</h2>
-        <p class="pGustos"> En esta sección, presento una selección de proyectos que reflejan mi evolución y compromiso en [tu área de especialización]. Cada uno de ellos representa no solo un desafío creativo, sino también una oportunidad para aplicar y expandir mis habilidades</p> 
+        <p class="pGustos"> En esta sección, presento una selección de proyectos que reflejan mi evolución y compromiso en la Pro. Cada uno de ellos representa no solo un desafío creativo, sino también una oportunidad para aplicar y expandir mis habilidades</p> 
     </section>
     <div class="contenedorFlex">
         <div class="contenedorGrid">
@@ -150,8 +153,8 @@
                     <img src="./assets/PrimerPaginamini.png" class="miniatura">
                     <div class="fondoProyectos">
                         <div class="iconosFlex">
-                            <a href="https://github.com/Bigbrother-2/Primera-pagina" target="_blank" class="linkProyecto"><img src="./assets/github.svg" ></a>
-                            <a href="https://bigbrother-2.github.io/Primera-pagina/" target="_blank" class="linkProyecto"><img src="./assets/web.svg" ></a>
+                            <a href="https://github.com/Bigbrother-2/Primera-pagina" target="_blank" class="linkProyecto"><img src="./assets/github.svg"></a>
+                            <a href="https://bigbrother-2.github.io/Primera-pagina/" target="_blank" class="linkProyecto"><img src="./assets/web.svg"></a>
                         </div>
                         <h2 class="h2Proyecto">Proyecto 1</h2>
 
@@ -192,20 +195,20 @@
                             <a href="https://github.com/Bigbrother-2/listaSimple" target="_blank" class="linkProyecto"><img src="./assets/github.svg" ></a>
                             <a href="https://bigbrother-2.github.io/listaSimple/" target="_blank" class="linkProyecto"><img src="./assets/web.svg" ></a>
                         </div>
-                        <h2 class="h2Proyecto">Poryecto 4</h2>
+                        <h2 class="h2Proyecto">Proyecto 4</h2>
 
                     </div>
                 </div>
             </div>
             <div class="proyectoscontenedores">
                 <div class="imagenYTextoProyecto">
-                    <img src="./assets/ComingSoon.png" class="miniatura comingSoon">
+                    <img src="./assets/snake.png" class="miniatura comingSoon">
                     <div class="fondoProyectos">
                         <div class="iconosFlex ">
-                            <a href="" target="_blank" class="linkProyecto"><img src="./assets/github.svg" ></a>
-                            <a href="" target="_blank" class="linkProyecto"><img src="./assets/web.svg" ></a>
+                            <a href="https://github.com/Bigbrother-2/Juego-de-la-vivorita-1.0" target="_blank" class="linkProyecto"><img src="./assets/github.svg" ></a>
+                            <a href="https://bigbrother-2.github.io/Juego-de-la-vivorita-1.0/" target="_blank" class="linkProyecto"><img src="./assets/web.svg" ></a>
                         </div>
-                        <h2 class="h2Proyecto"></h2>
+                        <h2 class="h2Proyecto">Proyecto 5</h2>
 
                     </div>
                 </div>
