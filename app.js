@@ -6,21 +6,25 @@ Quiero que cuando haga un click en el ancla se desplegue un sub menu. Para ello 
 
 const barraNavegacion = document.querySelectorAll(".menuItem");
 
-// Recorremos cada elemento de la lista y le agregamos el eventListener
+// Recorremos cada elemento de la lista y le agregamos los eventListeners
 barraNavegacion.forEach(function(item) {
-    item.addEventListener("mouseout", function() {
-        // Evento cuando el mouse entra (muestra el submenu)
-        item.addEventListener("mouseover", function() {
-            const submenu = this.querySelector(".menuAdentro");
+    // Evento cuando el mouse entra (muestra el submenu)
+    item.addEventListener("mouseover", function() {
+        const submenu = this.querySelector(".menuAdentro");
+        if (submenu) {
             submenu.style.display = "block"; // Mostramos el submenu
-        });
-        // Evento cuando el mouse sale (oculta el submenu)
-        item.addEventListener("mouseout", function() {
-            const submenu = this.querySelector(".menuAdentro");
+        }
+    });
+
+    // Evento cuando el mouse sale (oculta el submenu)
+    item.addEventListener("mouseout", function() {
+        const submenu = this.querySelector(".menuAdentro");
+        if (submenu) {
             submenu.style.display = "none"; // Ocultamos el submenu
-        });    
+        }
     });
 });
+
 
 
 

@@ -1180,10 +1180,11 @@ align-items:center;
         align-items: center;
     }
 
-    .titulo{
+    .tituloh1{
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: 30px;
     }
 
     .segundaDivicion{
@@ -1194,6 +1195,11 @@ align-items:center;
 
     .historia .textoHistoria{
         font-size: 15px;
+    }
+
+    .GustosPadre{
+        width: 90%;
+        margin: 0 auto;
     }
 
 
@@ -1242,9 +1248,34 @@ align-items:center;
 
 
 @media only screen and (min-width:768px) and (min-width:1024px){ /*Pantallas hasta 1024px*/
-    
+    .barraNavegacion{
+        width: 100%;
+    }
+
+    .menuContenedor{
+        position: relative;
+    }
+    .menuDesplegable{
+        display: flex;
+        font-size: 25px;
+    }
+    .barraNavegacion .menuContenedor .menuLinks{
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        align-items:end;
+        justify-content: start;
+        top: 45px;
+        left: 40%;
+        display: flex;
+    }
+
+    .barraNavegacion .menuContenedor .menuLinks .menuItem{
+        margin: 10px;
+    }
+
     .barraNavegacion .menuContenedor .menuLinks .menuItem .itemAdentro , .menuFlecha{
-        display: none;
+        display:none;
     }
 
     /* Seccion de bienvenida */
